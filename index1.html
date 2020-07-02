@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o="
+        crossorigin="anonymous" />
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="css/style1.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <title>Hotel RS | Welcome</title>
+</head>
+
+<body>
+
+    <!-- NAVBAR --> 
+    <header>
+        <div id="navbar" class="navbar top">
+            <h1 class="logo">
+                <a href="index1.html">HRS</a>
+            </h1>
+
+            <nav>
+                <ul>
+                    <li>
+                        <a href="index1.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="bookings.html">Bookings</a>
+                    </li>
+                    <li>
+                        <a href="about1.html">About</a>
+                    </li>
+                    <li>
+                        <a href="contact1.html">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- WELCOME SECTION -->
+    <div class="showcase">
+        <div class="showcase-content">
+            <h1>
+                <strong>
+                    <span class="text-primary">Enjoy</span> your stay in Goa
+            </h1>
+            </strong>
+            <p>Want to explore Goa? Here's Hotel Raddison to look forward to the journeys ahead.
+            </p>
+            <a href="about.html" class="btn">
+                <i class="fas fa-chevron-right"></i>
+                About Our Hotel
+            </a>
+        </div>
+    </div>
+
+    <!-- HISTORY OF THE HOTEL -->
+    <section class="flex-columns">
+        <div class="row">
+            <div class="column">
+                <div class="img">
+                    <img src="img/bookings/lounge.jpg" alt="">
+                </div>
+            </div>
+            <div class="column">
+                <div class="content-column bg-dark">
+                    <h1>
+                        <span class="text-primary">The History</span> Of Our Hotel</h1>
+                    <p>
+                        Hotel Raddison was established by Mr. Charles Doe at Colva in 1998.
+                         It was a two star Hotel with a minor area. Colva did not have much tourism
+                          sights so it was then decided in 2006 to move the hotel location to
+                           Bardez Taluka in North Goa. The Hotel gained Four star rating.
+                    </p>
+                    <a href="about.html" class="btn btn-light">
+                        <i class="fas fa-chevron-right"></i>
+                        Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FACILITIES PROVIDED -->
+    <section class="features">
+        <div class="bg-light">
+            <i class="fas fa-hotel fa-3x"></i>
+            <h3>Great Location</h3>
+            <p>Lovely Location of beaches and waterfalls.</p>
+        </div>
+        <div class="bg-primary">
+            <i class="fas fa-utensils fa-3x"></i>
+            <h3>Free Meals</h3>
+            <p>Delicious free Breakfast for a wonderful <br> start of your day.</p>
+        </div>
+        <div class="bg-light">
+            <i class="fas fa-dumbbell fa-3x"></i>
+            <h3>Fitness Room</h3>
+            <p>To help you stay fit during your holidays.</p>
+        </div>
+        <div class="bg-primary">
+            <i class="fas fa-swimming-pool fa-3x"></i>
+            <h3>Swimming Pools</h3>
+            <p>Beautiful and refreshing Swimming pools</p>
+        </div>
+    </section>
+
+    <!-- BOOKINGS SECTION -->
+    <section class="flex-columns">
+        <div class="row">
+            <div class="column">
+                <div class="content-column bg-dark">
+                    <h1 class="text-primary">Book Your Room</h1>
+                    <p>A Warm Welcome awaits for you. We are ready to welcome you when you are ready to travel.
+                        Have a memorable experience with Hotel Radisson and it's management. Choose the rooms 
+                    you prefer to live in Goa. </p>
+                    <a href="bookings.html" class="btn btn-light">
+                        <i class="fas fa-chevron-right"></i>
+                        Book</a>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="img">
+                    <img src="img/bookings/king-room.jpg" alt="room">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer bg-light">
+        <div class="social">
+            <a href="https://www.facebook.com" target="_blank">
+                <i class="fab fa-facebook fa-2x"></i>
+            </a>
+            <a href="https://www.facebook.com" target="_blank">
+                <i class="fab fa-twitter fa-2x"></i>
+            </a>
+            <a href="https://www.youtube.com" target="_blank">
+                <i class="fab fa-youtube fa-2x"></i>
+            </a>
+            <a href="https://www.linkedin.com/login" target="_blank">
+                <i class="fab fa-linkedin fa-2x"></i>
+            </a>
+            <h4>Hotel Raddison &copy; 2020, All Rights Reserved</h4>
+    </footer>
+
+    <!-- JAVASCRIPT FOR CONTROLLING NAVBAR TRANSITION -->
+    <script>
+        const navbar = document.getElementById('navbar');
+        let scrolled = false;
+  
+        window.onscroll = function () {
+          if (window.pageYOffset > 100) {
+            navbar.classList.remove('top');
+            if (!scrolled) {
+              navbar.style.transform = 'translateY(-70px)';
+            }
+            setTimeout(function () {
+              navbar.style.transform = 'translateY(0)';
+              scrolled = true;
+            }, 200);
+          } else {
+            navbar.classList.add('top');
+            scrolled = false;
+          }
+        };
+  
+      </script>
+    </script>
+
+</body>
+
+</html>
