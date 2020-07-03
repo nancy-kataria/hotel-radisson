@@ -203,6 +203,18 @@
   width: 5rem;
 }
 
+.main-box> .minus, .plus{
+  cursor: pointer;
+}
+
+.main-box .hiddeBtn{
+  display: none;
+}
+
+.hiddenBtn{
+  display: none;
+}
+
 .main-box .minus {
   padding-left: 0.3rem;
   padding-right: 0.3rem;
@@ -212,6 +224,10 @@
 .main-box .number {
   padding-left: 0.3rem;
   padding-right: 0.3rem;
+}
+
+.total-rooms{
+  margin: 0px auto;
 }
 
 .main-box .plus {
