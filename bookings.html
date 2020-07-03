@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/lightbox.min.css">
     <link rel="stylesheet" href="css/style1.css">
     <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/modals.css">
     <title>Hotel RS | Bookings</title>
 </head>
 
@@ -45,7 +46,7 @@
      <!-- Rooms -->
      <section id="rooms" class="rooms flex-grid section-padding">
         <header class="section-header">
-            <h1>Book Your Rooms</h1>
+            <h2><span class="text-primary">Book</span> Your Rooms</h2>
         </header>
         <div class="row">
             <div class="column">
@@ -94,9 +95,9 @@
                     <div class="form-group">
                     <label for="guests">Guests</label>
                     <div class="main-box">
-                        <div class="minus" onclick="changeTotalGuests('sub')"><h3>-</h3></div>
-                        <div id="totalGuests" class="number"><h3></h3></div>
-                        <div class="plus" onclick="changeTotalGuests('add')" ><h3>+</h3></div>
+                        <div class="minus" onclick="changeTotalGuests('sub')"><h2>-</h2></div>
+                        <div id="totalGuests" class="number"><h2></h2></div>
+                        <div class="plus" onclick="changeTotalGuests('add')" ><h2>+</h2></div>
                     </div>
                 </div>
                 <div class="form-group">
@@ -108,7 +109,7 @@
                     <input type="date" name="check-out" id="check-out">
                 </div>
 
-            </div>  
+            </div>
 
             <div class="rooms-selection border">
                 <div class="grid">
@@ -126,9 +127,9 @@
                     <p>Avg/Night (INR)</p>
                     <button id="singleRoomSelectBtn" type="button" onclick="onRoomSelect('single')" class="btn btn-green">Select</button>
                     <div id="singleTotalRooms" class="main-box hiddenBtn total-rooms">
-                        <div class="minus" onclick="changeTotalRooms('single','sub')"><h3>-</h3></div>
-                        <div id="singleTotalGuests" class="number"><h3></h3></div>
-                        <div class="plus" onclick="changeTotalRooms('single','add')" ><h3>+</h3></div>
+                        <div class="minus" onclick="changeTotalRooms('single','sub')"><h2>-</h2></div>
+                        <div id="singleTotalGuests" class="number"><h2></h2></div>
+                        <div class="plus" onclick="changeTotalRooms('single','add')" ><h2>+</h2></div>
                     </div>
                 </div>
 
@@ -151,9 +152,9 @@
                     <p>Avg/Night (INR)</p>
                     <button id="twinRoomSelectBtn" type="button" onclick="onRoomSelect('twin')" class="btn btn-green">Select</button>
                     <div id="twinTotalRooms" class="main-box hiddenBtn total-rooms">
-                        <div class="minus" onclick="changeTotalRooms('twin','sub')"><h3>-</h3></div>
-                        <div id="twinTotalGuests" class="number"><h3></h3></div>
-                        <div class="plus" onclick="changeTotalRooms('twin','add')" ><h3>+</h3></div>
+                        <div class="minus" onclick="changeTotalRooms('twin','sub')"><h2>-</h2></div>
+                        <div id="twinTotalGuests" class="number"><h2></h2></div>
+                        <div class="plus" onclick="changeTotalRooms('twin','add')" ><h2>+</h2></div>
                     </div>
                 </div>
 
@@ -168,16 +169,16 @@
                 <div class="grid">
                     <h3>Triple Room</h3>
                      <p>A perfect room for three friends. A 32.45 square meter room with three beds,
-                          two Sofa chairs, a mini fridgeand floor to ceiling windows with Pool views.</p>
+                          two Sofa chairs, a mini fridge and floor to ceiling windows with Pool views.</p>
                 </div>
                 <div class="grid">
                     <h4>&#8377 5,700</h4>
                     <p>Avg/Night (INR)</p>
                     <button id="tripleRoomSelectBtn" type="button" onclick="onRoomSelect('triple')" class="btn btn-green">Select</button>
                     <div id="tripleTotalRooms" class="main-box hiddenBtn total-rooms">
-                        <div class="minus" onclick="changeTotalRooms('triple','sub')"><h3>-</h3></div>
-                        <div id="tripleTotalGuests" class="number"><h3></h3></div>
-                        <div class="plus" onclick="changeTotalRooms('triple','add')" ><h3>+</h3></div>
+                        <div class="minus" onclick="changeTotalRooms('triple','sub')"><h2>-</h2></div>
+                        <div id="tripleTotalGuests" class="number"><h2></h2></div>
+                        <div class="plus" onclick="changeTotalRooms('triple','add')" ><h2>+</h2></div>
                     </div>
                 </div>
 
@@ -200,9 +201,9 @@
                     <p>Avg/Night (INR)</p>
                     <button id="kingRoomSelectBtn" type="button" onclick="onRoomSelect('king')" class="btn btn-green">Select</button>
                     <div id="kingTotalRooms" class="main-box hiddenBtn total-rooms">
-                        <div class="minus" onclick="changeTotalRooms('king','sub')"><h3>-</h3></div>
-                        <div id="kingTotalGuests" class="number"><h3></h3></div>
-                        <div class="plus" onclick="changeTotalRooms('king','add')" ><h3>+</h3></div>
+                        <div class="minus" onclick="changeTotalRooms('king','sub')"><h2>-</h2></div>
+                        <div id="kingTotalGuests" class="number"><h2></h2></div>
+                        <div class="plus" onclick="changeTotalRooms('king','add')" ><h2>+</h2></div>
                     </div>
                 </div>
 
@@ -225,9 +226,9 @@
                     <p>Avg/Night (INR)</p>
                     <button id="deluxeRoomSelectBtn" type="button" onclick="onRoomSelect('deluxe')" class="btn btn-green">Select</button>
                     <div id="deluxeTotalRooms" class="main-box hiddenBtn total-rooms">
-                        <div class="minus" onclick="changeTotalRooms('deluxe','sub')"><h3>-</h3></div>
-                        <div id="deluxeTotalGuests" class="number"><h3></h3></div>
-                        <div class="plus" onclick="changeTotalRooms('deluxe','sub')" ><h3>+</h3></div>
+                        <div class="minus" onclick="changeTotalRooms('deluxe','sub')"><h2>-</h2></div>
+                        <div id="deluxeTotalGuests" class="number"><h2></h2></div>
+                        <div class="plus" onclick="changeTotalRooms('deluxe','sub')" ><h2>+</h2></div>
                     </div>
                 </div>
 
@@ -252,7 +253,7 @@
                     <div class="flex-columns">
                         <div class="row">
                             <div class="column">
-                                <h4>Name</h4>
+                                <h3>Name</h3>
                                 <div class="group">
                                     <div class="form">
                                     <label for="first-name">First Name</label>
@@ -263,7 +264,7 @@
                                     </div>
                                 </div>
 
-                                <h4>Address</h4>
+                                <h3>Address</h3>
                                 <div class="group">
                                     <div class="form">
                                         <label for="country">Country</label>
@@ -275,11 +276,11 @@
                                 </div>
                             </div>
                             <div class="column">
-                                <h4>Contact Information</h4>
+                                <h3>Contact Information</h3>
                                 <div class="group">
                                     <div class="form">
                                     <label for="email">E-mail</label>
-                                    <input type="email" name="email" id="email">
+                                    <input type="email" name="email" id="email" size="30">
 
                                     <label for="phone-number">Phone-number</label>
                                     <input type="text" class="phone-number" id="phone-number">
@@ -294,23 +295,29 @@
                                 </div>
                             </div>
                             <div class="register-btn">
-                                <button class="btn btn-green"><i class="fas fa-chevron-right"></i> Register</button>
+                                <button type="submit" id="myBtn" class="btn btn-green"><i class="fas fa-chevron-right"></i> Register</button>
+                                <div id="myModal" class="modall">
+
+                                    <!-- Modal content -->
+                                    <div class="modal-content-register">
+                                        <span id="closeBtn" class="closeRegister">&times;</span>
+                                      <div class="modal-body-register">
+                                        <h3>Thank you for registering</h3>
+                                      </div>
+                                    </div>
+                                  </div>
                             </div>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
-
-            
-
-           
     </section>
 
     <!-- JAVASCRIPT FOR CREATING MODEL FOR REGISTERATION FORM -->
     <script>
         // Get the modal
-        var modal = document.getElementById("myModal");
+        var modall = document.getElementById("myModal");
         
         // Get the button that opens the modal
         var btn = document.getElementById("myBtn");
@@ -334,6 +341,35 @@
             modal.style.display = "none";
           }
         }
+    </script>
+
+    <script>
+        
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("closeRegister")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+        modal.style.display = "block";
+         }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+        modal.style.display = "none";
+        }
+
+       // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+        if (event.target == modal) {
+        modal.style.display = "none";
+        }
+        } 
     </script>
 
     <!-- FOOTER -->
