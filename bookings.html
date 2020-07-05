@@ -237,7 +237,7 @@
             </form>
 
             <div class="apply-button">
-                <button id="myBtn" class="btn btn-green"><i class="fas fa-chevron-right"></i>
+                <button id="applyButton" type="button" class="btn btn-green"><i class="fas fa-chevron-right"></i>
                      Apply</button> 
                      
                       <!-- The Modal -->
@@ -249,7 +249,7 @@
                     <h2>Get ready for your stay</h2>
                     <p>Please enter your details in here</p>
 
-                    <form>
+                    <form action="javascript:onRegister();">
                     <div class="flex-columns">
                         <div class="row">
                             <div class="column">
@@ -257,10 +257,10 @@
                                 <div class="group">
                                     <div class="form">
                                     <label for="first-name">First Name</label>
-                                    <input type="text" name="first-name" id="first-name">
+                                    <input required type="text" name="first-name" id="first-name">
 
                                     <label for="Last-Name">Last Name</label>
-                                    <input type="text" name="Last-Name" id="Last-Name">
+                                    <input required type="text" name="Last-Name" id="last-name">
                                     </div>
                                 </div>
 
@@ -268,10 +268,10 @@
                                 <div class="group">
                                     <div class="form">
                                         <label for="country">Country</label>
-                                        <input type="text" name="country" id="country">
+                                        <input required type="text" name="country" id="country">
 
                                         <label for="state">State</label>
-                                        <input type="text" name="state" id="state">
+                                        <input required type="text" name="state" id="state">
                                     </div>
                                 </div>
                             </div>
@@ -280,36 +280,35 @@
                                 <div class="group">
                                     <div class="form">
                                     <label for="email">E-mail</label>
-                                    <input type="email" name="email" id="email" size="30">
+                                    <input required type="email" name="email" id="email" size="30">
 
                                     <label for="phone-number">Phone-number</label>
-                                    <input type="text" class="phone-number" id="phone-number">
+                                    <input required type="number" class="phone-number" id="phone-number">
                                 </div>
                                 </div>
 
                                 <div class="group address-2">
                                     <div class="form">
                                         <label for="address">Address</label>
-                                        <textarea name="address" id="adresss" cols="30" rows="2"></textarea>
+                                        <textarea required name="address" id="address" cols="30" rows="2"></textarea>
                                     </div>
                                 </div>
                             </div>
                             <div class="register-btn">
                                 <button type="submit" id="myBtn" class="btn btn-green"><i class="fas fa-chevron-right"></i> Register</button>
-                                <div id="myModal" class="modall">
-
-                                    <!-- Modal content -->
-                                    <div class="modal-content-register">
-                                        <span id="closeBtn" class="closeRegister">&times;</span>
-                                      <div class="modal-body-register">
-                                        <h3>Thank you for registering</h3>
-                                      </div>
-                                    </div>
-                                  </div>
                             </div>
                         </div>
                     </div>
                 </form>
+            </div>
+        </div>
+        <div id="thanksModal" class="modall">
+        <!-- Modal content -->
+            <div class="modal-content-register">
+                <span id="closeBtn" class="closeRegister">&times;</span>
+                <div class="modal-body-register">
+                <h3>Thank you for registering</h3>
+                </div>
             </div>
         </div>
     </section>
@@ -317,18 +316,9 @@
     <!-- JAVASCRIPT FOR CREATING MODEL FOR REGISTERATION FORM -->
     <script>
         // Get the modal
-        var modall = document.getElementById("myModal");
-        
-        // Get the button that opens the modal
-        var btn = document.getElementById("myBtn");
-        
+        var modal = document.getElementById("myModal");
         // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("close")[0];
-        
-        // When the user clicks the button, open the modal 
-        btn.onclick = function() {
-          modal.style.display = "block";
-        }
         
         // When the user clicks on <span> (x), close the modal
         span.onclick = function() {
@@ -404,6 +394,16 @@
         const guestsElement =  document.getElementById("totalGuests");
         guestsElement.innerText = totalGuests;
 
+        var modal = document.getElementById("myModal");
+        var btn = document.getElementById("applyButton");
+        btn.onclick = function() {
+            if(totalSingleRooms + totalTwinRooms + totalTripleRooms + totalKingRooms + totalDeluxeRooms === 0){
+                alert("Please select at least one room.");
+                return false;
+            }
+            modal.style.display = "block";
+        }
+
 
         function changeTotalGuests(type){
             if(type==='add'){
@@ -458,6 +458,7 @@
                     }else{
                         if(totalSingleRooms === 1){
                             showSelectRoomButton(roomType);
+                            totalSingleRooms--;
                         }else{
                             totalSingleRooms--;
                         }
@@ -472,6 +473,7 @@
                     }else{
                         if(totalTwinRooms === 1){
                             showSelectRoomButton(roomType);
+                            totalTwinRooms--;
                         }else{
                             totalTwinRooms--;
                         }
@@ -486,6 +488,7 @@
                     }else{
                         if(totalTripleRooms === 1){
                             showSelectRoomButton(roomType);
+                            totalTripleRooms--;
                         }else{
                             totalTripleRooms--;
                         }
@@ -500,6 +503,7 @@
                     }else{
                         if(totalKingRooms === 1){
                             showSelectRoomButton(roomType);
+                            totalKingRooms--;
                         }else{
                             totalKingRooms--;
                         }
@@ -514,6 +518,7 @@
                     }else{
                         if(totalDeluxeRooms === 1){
                             showSelectRoomButton(roomType);
+                            totalDeluxeRooms--;
                         }else{
                             totalDeluxeRooms--;
                         }
@@ -530,6 +535,50 @@
             roomSelector.classList.add('hiddenBtn');
         }
 
+        async function onRegister(){
+            const inputs = ['first-name','last-name', 'country', 'phone-number', 'state','email','address'];
+            const payload = {};
+            inputs.forEach(input=>{
+                payload[input.replace('-','_')] = document.getElementById(input).value;
+            });
+            if(totalSingleRooms){
+                payload.totalSingleRooms = totalSingleRooms;
+            }
+            if(totalTwinRooms){
+                payload.totalTwinRooms = totalTwinRooms;
+            }
+            if(totalTripleRooms){
+                payload.totalTripleRooms = totalTripleRooms;
+            }
+            if(totalKingRooms){
+                payload.totalKingRooms = totalKingRooms;
+            }
+            if(totalDeluxeRooms){
+                payload.totalDeluxeRooms = totalDeluxeRooms;
+            }
+            try {
+                const resposne = await fetch('http://localhost:3000/booking',
+                {
+                    body: JSON.stringify(payload), 
+                    method:"POST",
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                });
+                const data = await resposne.json();
+                document.getElementById('myModal').style.display = 'none';
+                const thanksModal = document.getElementById('thanksModal');
+                thanksModal.style.display = "block";
+                
+            } catch (error) {
+                alert(error.error || 'Something went wrong. Please try again.' );
+            }
+            return false;
+        }
+
+        function showDetailsForm(){
+           
+        }
     </script>
     
 </body>
